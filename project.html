@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projects and experience portfolio of Naeem White - Data analytics, climate heat trends, corporate finance, and operations.">
+  <title>Projects & Experience | Naeem White</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="main-nav">
+    <div class="container nav-content">
+      <a href="index.html" class="brand-logo" id="brand-link">
+        <span class="brand-badge">NW</span>
+        <span>Naeem White</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
+          <li><a href="project.html" class="nav-link active" id="nav-projects">Projects</a></li>
+          <li><a href="resume.html" class="nav-link" id="nav-resume">Resume</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="mailto:Nwhit46@lsu.edu" class="btn btn-secondary btn-sm" id="nav-contact-btn">Get In Touch</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <div class="container" style="padding-top: 50px; padding-bottom: 70px;">
+      
+      <!-- Page Hero Header -->
+      <section class="section-header" style="margin-bottom: 40px;">
+        <span class="section-tag">Applied Analytics Projects</span>
+        <h1 class="hero-title" style="margin-bottom: 16px;">
+          Featured <span class="gradient-text">Projects</span>
+        </h1>
+        <p class="hero-lead">
+          A showcase of data analytics projects focusing on urban climate heat trends and food ecosystem survey modeling.
+        </p>
+      </section>
+
+      <!-- Filter Controls (Vanilla JS) -->
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px;" id="filter-controls">
+        <button class="btn btn-secondary btn-sm active-filter" data-filter="all" id="filter-all" style="background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.4); color: var(--accent-cyan);">All Projects</button>
+        <button class="btn btn-secondary btn-sm" data-filter="heat" id="filter-heat">Climate & Heat Trends</button>
+        <button class="btn btn-secondary btn-sm" data-filter="survey" id="filter-survey">Food Access Survey</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <section class="card-grid" id="projects-grid">
+        
+        <!-- Featured Project 1: Atlanta Weather and Heat Trends (Wide Card) -->
+        <article class="card project-item" data-category="heat" id="atlanta-heat" style="grid-column: 1 / -1;">
+          <div class="card-top">
+            <span class="card-icon">🌡️</span>
+            <span class="tag">Featured Data Analytics Project</span>
+          </div>
+          <h2 class="card-title" style="font-size: 1.8rem; margin-bottom: 12px;">Atlanta Weather and Heat Trends</h2>
+          
+          <p class="card-desc" style="font-size: 1.05rem; margin-bottom: 16px;">
+            Analyzed historical NOAA weather data to evaluate temperature and extreme-heat trends in Atlanta. Used Excel PivotTables, data filtering, and charts to examine average maximum temperatures in April and the number of days exceeding 95°F during June, July, and August. The analysis showed an upward trend in April temperatures, while recent years (2023–2025) experienced levels of extreme-heat days comparable to some of the higher periods in the dataset.
+          </p>
+
+          <!-- Key Finding & Recommendation Callouts -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 20px;">
+            <div class="callout-box">
+              <div class="callout-title">🔍 Key Finding</div>
+              <p class="callout-text">
+                The results suggest that Atlanta is experiencing signs of increasing heat, highlighting the importance of preparing communities for periods of extreme temperatures.
+              </p>
+            </div>
+
+            <div class="callout-box" style="border-left-color: var(--accent-emerald);">
+              <div class="callout-title" style="color: var(--accent-emerald);">💡 Recommendation</div>
+              <p class="callout-text">
+                Proposed mobile cooling centers that could be deployed to neighborhoods experiencing high heat exposure. This approach could improve access to cooling resources for residents without reliable transportation while allowing services to be relocated based on where extreme heat impacts are greatest.
+              </p>
+            </div>
+          </div>
+
+          <!-- Charts / Visual Gallery -->
+          <h3 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--text-primary); margin-top: 8px; margin-bottom: 12px;">
+            📊 Data Visualizations & Trend Analysis
+          </h3>
+          <div class="project-media-grid">
+            <div class="project-chart-card">
+              <img src="images/april-avg-max-temp.png" alt="April Average Maximum Temperature (2021–2026)" class="project-chart-img">
+              <p class="project-chart-caption">April Average Maximum Temperature (2021–2026)</p>
+            </div>
+            <div class="project-chart-card">
+              <img src="images/days-over-95.png" alt="Days Over 95 Degrees June, July, August (2010–2025)" class="project-chart-img">
+              <p class="project-chart-caption">Days Over 95°F in June, July, August (2010–2025)</p>
+            </div>
+            <div class="project-chart-card">
+              <img src="images/june-max-temp.png" alt="Average Maximum Temperature In June (2011–2026)" class="project-chart-img">
+              <p class="project-chart-caption">Average Maximum Temperature in June (2011–2026)</p>
+            </div>
+          </div>
+
+          <div class="tags" style="margin-top: 14px;">
+            <span class="tag">Excel</span>
+            <span class="tag">PivotTables</span>
+            <span class="tag">NOAA Weather Data</span>
+            <span class="tag">Data Visualization</span>
+            <span class="tag">Trend Analysis</span>
+          </div>
+        </article>
+
+        <!-- Featured Project 2: Food Ecosystem Analysis Survey -->
+        <article class="card project-item" data-category="survey" id="food-ecosystem" style="grid-column: 1 / -1;">
+          <div class="card-top">
+            <span class="card-icon">📋</span>
+            <span class="tag">Survey Analytics & Modeling</span>
+          </div>
+          <h2 class="card-title" style="font-size: 1.8rem; margin-bottom: 12px;">Food Ecosystem Analysis Survey</h2>
+          
+          <p class="card-desc" style="font-size: 1.05rem; margin-bottom: 16px;">
+            Cleaned and analyzed survey data from 354 respondents using advanced Excel formulas and weighted scoring models to evaluate food-access barriers and classify participants into five distinct resource tiers. The study examined socioeconomic indicators, transportation challenges, and food behaviors to inform municipal and community food policy.
+          </p>
+
+          <!-- Scoring Framework & Findings Callouts -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 20px;">
+            <div class="callout-box">
+              <div class="callout-title">⚙️ Weighted Scoring Model (70/30)</div>
+              <p class="callout-text">
+                • <strong>Access Score (70% Weight):</strong> Averaged 5 factors (income, education, employment, transportation, distance to primary food source), each rated on a 1–5 scale. Weighted at 70% due to its decisive influence on overall access.<br>
+                • <strong>Food Behavior Score (30% Weight):</strong> Averaged 4 behavioral metrics (grocery shopping frequency, transportation challenges, cooking, and gardening participation) on a 1–5 scale.<br>
+                • <strong>Tier Classification:</strong> Combined weighted scores placed each respondent into one of five tiers, ranging from Tier 1 (High Resource) to Tier 5 (High Food Access Barriers).
+              </p>
+            </div>
+
+            <div class="callout-box" style="border-left-color: var(--accent-purple);">
+              <div class="callout-title" style="color: var(--accent-purple);">📊 Key Insights & Findings</div>
+              <p class="callout-text">
+                • <strong>Resource Distribution:</strong> The majority of respondents possess medium to good food access. The largest group falls into <strong>Tier 2 (Upper Middle)</strong>, followed by <strong>Tier 3 (Stable Working)</strong>, indicating stable baseline access with occasional financial or accessibility friction.<br>
+                • <strong>Multifaceted Determinants:</strong> Revealed that food access extends beyond grocery store proximity—transportation availability, financial resources, education, and cooking proficiency all play essential roles.
+              </p>
+            </div>
+          </div>
+
+          <!-- Impact & Skills Learned -->
+          <div class="callout-box" style="border-left-color: var(--accent-emerald); margin-bottom: 20px;">
+            <div class="callout-title" style="color: var(--accent-emerald);">🎯 Decision Impact & Technical Execution</div>
+            <p class="callout-text">
+              • <strong>Actionable Policy:</strong> Provides empirical data to help city leaders and community organizations make targeted decisions regarding food access investments, transit expansion, and equitable food systems.<br>
+              • <strong>Data Cleaning:</strong> Converted qualitative survey responses (such as Agree/Disagree and text entries) into numerical values for analysis.<br>
+              • <strong>Excel Techniques:</strong> Utilized complex nested IF statements, weighted averages, and lookup functions to calculate respondent tier rankings.
+            </p>
+          </div>
+
+          <!-- Chart / Visual Gallery -->
+          <h3 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--text-primary); margin-top: 8px; margin-bottom: 12px;">
+            📊 Survey Respondent Distribution Across Resource Tiers (n=354)
+          </h3>
+          <div class="project-media-grid" style="grid-template-columns: minmax(280px, 620px);">
+            <div class="project-chart-card">
+              <img src="images/food-access-tiers.png" alt="Respondent Distribution by Food Access Resource Tiers" class="project-chart-img">
+              <p class="project-chart-caption">Survey Respondent Breakdown: Tier 1 (High Resource) to Tier 5 (High Food Access Barriers)</p>
+            </div>
+          </div>
+
+          <div class="tags" style="margin-top: 14px;">
+            <span class="tag">Excel Formulas</span>
+            <span class="tag">IF Statements</span>
+            <span class="tag">Survey Data (n=354)</span>
+            <span class="tag">Data Cleaning</span>
+            <span class="tag">Weighted Scoring Model</span>
+            <span class="tag">Food Access Policy</span>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- Call to Action Section -->
+      <section class="card" style="margin-top: 60px; text-align: center; padding: 48px 24px; border-color: rgba(56, 189, 248, 0.25);" id="project-cta">
+        <h2 style="font-family: var(--font-heading); font-size: 2rem; margin-bottom: 12px; color: var(--text-primary);">
+          Interested in discussing a project or opportunity?
+        </h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 24px;">
+          I am actively seeking internship and full-time opportunities in Information Systems, Business Analytics, and Finance.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+          <a href="mailto:Nwhit46@lsu.edu" class="btn btn-primary" id="cta-contact-btn">Send an Email ✉️</a>
+          <a href="resume.html" class="btn btn-secondary" id="cta-resume-btn">View My Resume 📄</a>
+          <a href="https://www.linkedin.com/in/naeem-white" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="cta-linkedin-btn">Connect on LinkedIn ↗</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="site-footer">
+    <div class="container footer-content">
+      <p class="footer-text">© 2026 Naeem White. Atlanta, GA · (404)-450-4914 · Nwhit46@lsu.edu</p>
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="project.html" class="footer-link">Projects</a>
+        <a href="resume.html" class="footer-link">Resume</a>
+        <a href="https://www.linkedin.com/in/naeem-white" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+        <a href="mailto:Nwhit46@lsu.edu" class="footer-link">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Filter Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterButtons = document.querySelectorAll('#filter-controls button');
+      const projectItems = document.querySelectorAll('.project-item');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const category = button.getAttribute('data-filter');
+
+          // Update active button state
+          filterButtons.forEach(btn => {
+            btn.style.background = 'rgba(255, 255, 255, 0.05)';
+            btn.style.borderColor = 'var(--border-subtle)';
+            btn.style.color = 'var(--text-primary)';
+          });
+          button.style.background = 'rgba(56, 189, 248, 0.15)';
+          button.style.borderColor = 'rgba(56, 189, 248, 0.4)';
+          button.style.color = 'var(--accent-cyan)';
+
+          // Filter card visibility
+          projectItems.forEach(item => {
+            if (category === 'all' || item.getAttribute('data-category') === category) {
+              item.style.display = 'flex';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
