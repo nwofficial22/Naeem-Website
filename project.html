@@ -210,9 +210,19 @@
     </div>
   </footer>
 
-  <!-- Filter Script -->
+  <!-- Lightbox Modal Overlay -->
+  <div id="image-lightbox" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Image Preview" style="display: none;">
+    <div class="lightbox-content" id="lightbox-container">
+      <button type="button" class="lightbox-close" id="lightbox-close-btn" aria-label="Close image preview">&times;</button>
+      <img src="" alt="" class="lightbox-image" id="lightbox-img">
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // Filter Logic
       const filterButtons = document.querySelectorAll('#filter-controls button');
       const projectItems = document.querySelectorAll('.project-item');
 
@@ -239,6 +249,77 @@
             }
           });
         });
+      });
+
+      // Lightbox Modal Logic
+      const lightbox = document.getElementById('image-lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      const lightboxCloseBtn = document.getElementById('lightbox-close-btn');
+      const chartCards = document.querySelectorAll('.project-chart-card');
+
+      function openLightbox(imgSrc, imgAlt, captionText) {
+        lightboxImg.src = imgSrc;
+        lightboxImg.alt = imgAlt || 'Enlarged chart view';
+        lightboxCaption.textContent = captionText || imgAlt || '';
+        lightbox.style.display = 'flex';
+        // Trigger reflow to start opacity transition
+        void lightbox.offsetWidth;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        setTimeout(() => {
+          if (!lightbox.classList.contains('active')) {
+            lightbox.style.display = 'none';
+            lightboxImg.src = '';
+            document.body.style.overflow = '';
+          }
+        }, 250);
+      }
+
+      chartCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const img = card.querySelector('.project-chart-img');
+          const caption = card.querySelector('.project-chart-caption');
+          if (img) {
+            openLightbox(img.src, img.alt, caption ? caption.textContent : '');
+          }
+        });
+
+        // Keyboard accessibility (Enter or Space to open)
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', 'Click to enlarge chart image');
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            const img = card.querySelector('.project-chart-img');
+            const caption = card.querySelector('.project-chart-caption');
+            if (img) {
+              openLightbox(img.src, img.alt, caption ? caption.textContent : '');
+            }
+          }
+        });
+      });
+
+      // Close on X button click
+      lightboxCloseBtn.addEventListener('click', closeLightbox);
+
+      // Close on backdrop click (outside image container)
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      // Close on Escape key press
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+          closeLightbox();
+        }
       });
     });
   </script>
